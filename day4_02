@@ -1,0 +1,36 @@
+# 2020_5-24_CodePractice
+
+//删除公共字符串
+  输入两个字符串，从第一字符串中删除第二个字符串中所有的字符。
+       例如，输入”They are students.”和”aeiou”，则删除之后的第一个字符串变
+       成”Thy r stdnts.”
+      【输入描述：】   每个测试输入包含2个字符串
+      【输出描述：】   输出删除后的字符串
+      【示例1:】 输入   They are students.
+                                           aeiou
+                        输出    Thy r stdnts.
+                        
+
+//【题目解析】：
+//还是一道字符串处理的问题，相信这个题大家都能解出来
+//【解题思路】：
+//最简单的思路就是两层循环遍历，下面将“They are students.”称为字符串1，
+// 将“aeiou”称为字符串2。每遍历到字符串2中的一个字符，就在字符串1中找到相同的字符，
+// 找到之后删除它，并将字符串1后面的字符整体向前移动1位。
+import java.util.Scanner;
+
+public class day4_02 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        while (sc.hasNext()){
+            char[] ch=sc.nextLine().toCharArray();
+            String str=sc.nextLine();
+
+            for(int i=0;i<ch.length;i++){
+                if(!str.contains(String.valueOf(ch[i]))){
+                    System.out.print(ch[i]);
+                }
+            }
+        }
+    }
+}
